@@ -4,12 +4,12 @@ public class Main {
     public static void main(String[] args) {
 
         StatsService stats = new StatsService();
-        long[] num = {412422, 124235, 12324, 212342, 1522235, 2342342, 235, 6234, 62342, 62, 31, 21};
+        long[] num = {412422, 124235, 12324, 212342, 20, 2342342, 235, 6234, 62342, 62, 31, 21};
         int min = stats.minSales(num);
         System.out.println(min);
 
         StatsService stats2 = new StatsService();
-        int[] num2 = {412422, 124235, 12324, 212342, 1522235, 2342342, 235, 6234, 62342, 62, 31, 21};
+        int[] num2 = {1, 2, 3};
         int amount = stats2.maxSales(num2);
         System.out.println(amount);
 

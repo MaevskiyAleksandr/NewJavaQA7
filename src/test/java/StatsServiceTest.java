@@ -2,7 +2,6 @@ import org.example.StatsService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
 
 public class StatsServiceTest {
 
@@ -22,7 +21,6 @@ public class StatsServiceTest {
     @Test
     void statisticSaleAverageMonth(){
         StatsService service = new StatsService();
-        // Подготавливаем данные:
         int[] sale = new int[]{8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
 
@@ -81,7 +79,7 @@ public class StatsServiceTest {
 
         int actual = (int) service.numberOfMonthsWithSalesAboveAverage(sale);
 
-        
+
         long expected = 5;
         Assertions.assertEquals(expected, actual);
     }

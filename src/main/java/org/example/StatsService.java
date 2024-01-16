@@ -26,14 +26,11 @@ public class StatsService {
 
     public double averageSalesAmount(int[] sales) {
 
-        double averageAmount = 0;
+        double averageAmount = sales.length;
 
-        for (int avgPurchaseMonth : sales) {
-            averageAmount = averageAmount + avgPurchaseMonth / 12;
-        }
-
-        return averageAmount;
-
+        double sum = maxSales(sales);
+        double averageMonth = sum / averageAmount;
+        return averageMonth;
     }
 
     public int monthOfTheBiggestSales(int[] sales) {
