@@ -14,50 +14,50 @@ public class StatsService {
         return minMonth + 1; // месяца нумеруются с 1, а индексы массива с 0, нужно сдвинуть ответ на 1
     }
 
-    public int maxSales(int[] sales) {
-        int amountSales = 0;
+    public long maxSales(long[] sales) {
+        long amountSales = 0;
 
-        for (int maxPurchase : sales) {
+        for (long maxPurchase : sales) {
 
             amountSales = amountSales + maxPurchase;
         }
         return amountSales;
     }
 
-    public double averageSalesAmount(int[] sales) {
+    public long averageSalesAmount(long[] sales) {
 
-        double averageAmount = sales.length;
+        long averageAmount = sales.length;
 
-        double sum = maxSales(sales);
-        double averageMonth = sum / averageAmount;
+        long sum = maxSales(sales);
+        long averageMonth = sum / averageAmount;
         return averageMonth;
     }
 
-    public int monthOfTheBiggestSales(int[] sales) {
-        int saleMax = sales[0];
+    public long monthOfTheBiggestSales(long[] sales) {
+        long saleMax = sales[0];
 
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] >= sales[saleMax]) {
+            if (sales[i] >= sales[(int) saleMax]) {
                 saleMax = i;
             }
         }
         return saleMax + 1;
     }
 
-    public int monthOfTheMinSales(int[] sales) {
-        int saleMin = 0;
+    public long monthOfTheMinSales(long[] sales) {
+        long saleMin = 0;
 
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] <= sales[saleMin]) {
+            if (sales[i] <= sales[(int) saleMin]) {
                 saleMin = i;
             }
         }
         return saleMin + 1;
     }
 
-    public int numberOfMonthsWithBelowAverageSales(int[] sale) {
-        int averageSum = (int) averageSalesAmount(sale);
-        int numberUnderAverage = 0;
+    public long numberOfMonthsWithBelowAverageSales(long[] sale) {
+        long averageSum = (long) averageSalesAmount(sale);
+        long numberUnderAverage = 0;
 
         for (int i = 0; i < sale.length; i++) {
             if (sale[i] < averageSum) {
@@ -67,9 +67,9 @@ public class StatsService {
         return numberUnderAverage;
     }
 
-    public int numberOfMonthsWithSalesAboveAverage(int[] sale) {
-        int averageSum = (int) averageSalesAmount(sale);
-        int numberOverAverage = 0;
+    public long numberOfMonthsWithSalesAboveAverage(long[] sale) {
+        long averageSum = (long) averageSalesAmount(sale);
+        long numberOverAverage = 0;
 
         for (int i = 0; i < sale.length; i++) {
             if (sale[i] > averageSum) {
